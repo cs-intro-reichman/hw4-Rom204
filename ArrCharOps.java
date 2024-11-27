@@ -11,8 +11,8 @@ public class ArrCharOps {
         System.out.println(indexOf(arr1,'l'));  //v
         System.out.println(indexOf(arr1,'l',3)); //v
         System.out.println(lastIndexOf(arr1, 'l'));//v
-        System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
+        System.out.println(concat(arr1, arr2));//v
+        System.out.println(subArray(arr2, 2, 9));//v
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
@@ -86,12 +86,9 @@ public class ArrCharOps {
         char[] concatArr = new char[arr1.length + arr2.length];
         for (int i = 0; i < arr1.length; i++){
             concatArr[i] = arr1[i];
-            System.out.println(arr1[i]);
         }
         for (int i = 0; i < arr2.length; i++){
             concatArr[arr1.length + i] = arr2[i];
-            System.out.println(i);
-            System.out.println(arr2[i]);
         }
         return concatArr;
     }
@@ -104,7 +101,7 @@ public class ArrCharOps {
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
         char[] subArr = new char[arr.length];
         int current = 0;
-        for (int i = beginIndex; i < endIndex - 1; i++){
+        for (int i = beginIndex; i < endIndex; i++){
             subArr[current] = arr[i];
             current++;
         }
@@ -123,7 +120,7 @@ public class ArrCharOps {
         if (n == 0) return 0;
         long hashSum = 0;
         for (int i = 0; i < n; i++){
-            hashSum += (arr[i] * Math.pow(7, n - i + 1));
+            hashSum += (arr[i] * Math.pow(7, n - (i + 1)));
         }
         return hashSum;
     }
