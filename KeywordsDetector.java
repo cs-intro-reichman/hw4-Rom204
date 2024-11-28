@@ -36,8 +36,8 @@ public class KeywordsDetector {
                     word += c;
                 } else {
                     for (int k = 0; k < keywords.length; k++){
-                        if (word.equals(keywords[k])) {
-                            System.out.println(word);
+                        if (word.equals(keywords[k].toLowerCase())) {
+                            System.out.println(sentences[i]);
                         }
                     }
                     word = "";
